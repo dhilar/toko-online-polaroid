@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Foto Polaroid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden { display: none; }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">CACTUS OFFICIAL STORE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galery.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center text-white d-flex align-items-center">
+        <div class="container">
+            <h1 class="display-4">Abadikan Momen dengan Polaroid</h1>
+            <p class="lead">Foto polaroid berkualitas tinggi untuk setiap momen spesial Anda.</p>
+            <a href="galery.html" class="btn btn-primary mt-3">Lihat Koleksi</a>
+        </div>
+    </header>
+    
+
+    <section id="gallery" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Galeri Foto</h2>
+            <div class="row">
+                <div class="col-md-4"><img src="galeri-1.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+                <div class="col-md-4"><img src="galeri-2.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+                <div class="col-md-4"><img src="galery-bg.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+                
+                <!-- Tambahan gambar yang awalnya disembunyikan -->
+                <div class="col-md-4 hidden"><img src="hero-bg.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+                <div class="col-md-4 hidden"><img src="hero.bg.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+                <div class="col-md-4 hidden"><img src="galeri-1.jpg" class="img-fluid rounded" alt="Foto Polaroid"></div>
+            </div>
+            <button id="showMore" class="btn btn-primary mt-3">Lihat Lebih Banyak</button>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 PolaroidKu. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("showMore").addEventListener("click", function() {
+            let hiddenImages = document.querySelectorAll(".hidden");
+            hiddenImages.forEach((img, index) => {
+                img.classList.remove("hidden");
+                img.classList.add("fade-in");
+            });
+            this.style.display = "none"; // Sembunyikan tombol setelah klik
+        });
+    </script>
+</body>
+</html>
